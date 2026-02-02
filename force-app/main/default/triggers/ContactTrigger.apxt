@@ -1,0 +1,5 @@
+trigger ContactTrigger on Contact(After Update){
+    if(Trigger.isAfter && Trigger.isUpdate){
+        ContactHandler.handleAfterUpdate(Trigger.NEW, Trigger.oldMap);
+    }
+}
